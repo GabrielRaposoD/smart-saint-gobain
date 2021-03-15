@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "next start",
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 3002",
     "build": "next build && next export",
     "commit": "git add . && cz",
     "test": "jest --silent",
@@ -16,6 +16,7 @@
     "axios": "^0.20.0",
     "clsx": "^1.1.1",
     "formik": "^2.1.5",
+    "lodash": "^4.17.21",
     "next": "^10.0.0",
     "next-seo": "^4.7.3",
     "react": "^16.13.1",

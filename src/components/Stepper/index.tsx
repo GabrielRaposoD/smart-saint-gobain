@@ -1,46 +1,37 @@
 // Module Imports
-import React from 'react';
+import React from 'react'
 
 // Application Import
-import { ButtonState } from '@typings/index';
-import { useFormikContext } from 'formik';
+import { ButtonState } from '@typings/index'
+import { useFormikContext } from 'formik'
 
 // Components Import
-import { Button } from '@components/index';
-import { useInfo } from '@store/useInfo';
+import { Button } from '@components/index'
+import { useInfo } from '@store/useInfo'
+import { useSteps } from 'context/formStepsContext'
 interface StepperProps {
-  buttonState?: ButtonState;
+  buttonState?: ButtonState
 }
 
 const Stepper: React.FC<StepperProps> = ({ buttonState }) => {
-  const info = useInfo();
-  const formik = useFormikContext();
-
-  if (info.currentStep === 0) {
-    return (
-      <div className='flex justify-start w-full'>
-        <Button
-          title='Começar'
-          state={ButtonState.normal}
-          onClick={() => info.incrementCurrentStep()}
-        />
-      </div>
-    );
-  }
+  const info = useInfo()
+  const formik = useFormikContext()
+  const steps = useSteps()
 
   return (
-    <div className='flex justify-start w-full space-x-4'>
-      <div className='w-1/2'>
+    <div className="flex justify-start w-full space-x-4">
+      <div className="w-1/2">
         <Button
-          title='Voltar'
+          title="Voltar"
           state={ButtonState.inverse}
-          onClick={() => info.decrementCurrentStep()}
+          onClick={() => steps.setCurrentStep(steps.currentStep - 1)}
         />
       </div>
-      <div className='w-1/2'>
+      <div className="w-1/2">
         <Button
+          type="submit"
           title={
-            info.steps[info.currentStep] === 7 ? 'Criar Vídeo' : 'Continuar'
+            info.steps[steps.currentStep] === 7 ? 'Criar Vídeo' : 'Continuar'
           }
           state={
             buttonState
@@ -49,14 +40,10 @@ const Stepper: React.FC<StepperProps> = ({ buttonState }) => {
               ? ButtonState.normal
               : ButtonState.disabled
           }
-          onClick={async () => {
-            if (formik) formik.handleSubmit();
-            info.incrementCurrentStep();
-          }}
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export { Stepper };
+export { Stepper }
