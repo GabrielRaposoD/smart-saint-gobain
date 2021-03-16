@@ -6,12 +6,12 @@ import { MainLayout } from '@layout/index'
 import { useInfo } from '@store/useInfo'
 
 // Components Import
-import { items } from '@mocks/screenComponents'
-import { FormikWizard } from '@components/FormikWizard'
+import { StepsController } from '@components/StepsController'
 import { items as StepItems } from 'mocks/screenComponents'
-import * as Yup from 'yup'
 import { Form } from 'formik'
 import { StepContext } from 'context/formStepsContext'
+
+import { templates } from '@mocks/templates'
 
 const initialValues = {
   template: null,
@@ -28,29 +28,27 @@ const initialValues = {
   shopName: ''
 }
 
-const emptyYupValidation = Yup.object().shape({})
-
 const IndexPage: React.FC = () => {
   const { video } = useInfo()
 
   async function handleSubmit(values) {
-    console.log(values)
+    console.log('submit', values)
   }
 
   return (
-    <FormikWizard
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      validationSchemas={StepItems.map(
-        (i) => i.validation || emptyYupValidation
-      )}
-    >
-      {({ currentStep, setCurrentStep, values }) => {
-        const item = StepItems[currentStep]
+    <StepsController initialValues={initialValues} onSubmit={handleSubmit}>
+      {({ currentStep: formStep, setCurrentStep, values }) => {
+        const template = templates.find(
+          (t) => t.id === values.template?.id
+        ) || { steps: [1, 2, 3] }
+        const currentStep = template.steps[formStep] || 0
+        const item = StepItems[formStep > 0 ? currentStep - 1 : formStep]
 
         return (
           <StepContext.Provider value={{ currentStep, setCurrentStep }}>
             {JSON.stringify(values)}
+            {JSON.stringify(currentStep)}
+            {JSON.stringify(formStep)}
             <MainLayout
               img={item.img}
               isCover={item.isCover}
@@ -61,7 +59,7 @@ const IndexPage: React.FC = () => {
             >
               <Form className="h-full">
                 <item.Component
-                  currentStep={currentStep}
+                  currentStep={formStep}
                   setCurrentStep={setCurrentStep}
                 />
               </Form>
@@ -69,7 +67,7 @@ const IndexPage: React.FC = () => {
           </StepContext.Provider>
         )
       }}
-    </FormikWizard>
+    </StepsController>
   )
 }
 
