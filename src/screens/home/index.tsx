@@ -1,17 +1,16 @@
 // Module Imports
-import React from 'react'
+import React from 'react';
 
 // Application Import
-import { MainLayout } from '@layout/index'
-import { useInfo } from '@store/useInfo'
+import { MainLayout } from '@layout/index';
 
 // Components Import
-import { StepsController } from '@components/StepsController'
-import { items as StepItems } from 'mocks/screenComponents'
-import { Form } from 'formik'
-import { StepContext } from 'context/formStepsContext'
+import { StepsController } from '@components/StepsController';
+import { items as StepItems } from 'mocks/screenComponents';
+import { Form } from 'formik';
+import { StepContext } from 'context/formStepsContext';
 
-import { templates } from '@mocks/templates'
+import { templates } from '@mocks/templates';
 
 const initialValues = {
   template: null,
@@ -25,14 +24,13 @@ const initialValues = {
   track: null,
   name: '',
   email: '',
-  shopName: ''
-}
+  shopName: '',
+};
 
 const IndexPage: React.FC = () => {
-  const { video } = useInfo()
-
+  const video = {};
   async function handleSubmit(values) {
-    console.log('submit', values)
+    console.log('submit', values);
   }
 
   return (
@@ -40,15 +38,14 @@ const IndexPage: React.FC = () => {
       {({ currentStep: formStep, setCurrentStep, values }) => {
         const template = templates.find(
           (t) => t.id === values.template?.id
-        ) || { steps: [1, 2, 3] }
-        const currentStep = template.steps[formStep] || 0
-        const item = StepItems[formStep > 0 ? currentStep - 1 : formStep]
+        ) || { steps: [1, 2, 3] };
+        const currentStep = template.steps[formStep] || 0;
+        const item = StepItems[formStep > 0 ? currentStep - 1 : formStep];
 
         return (
-          <StepContext.Provider value={{ currentStep, setCurrentStep }}>
-            {JSON.stringify(values)}
-            {JSON.stringify(currentStep)}
-            {JSON.stringify(formStep)}
+          <StepContext.Provider
+            value={{ currentStep: formStep, setCurrentStep }}
+          >
             <MainLayout
               img={item.img}
               isCover={item.isCover}
@@ -57,7 +54,7 @@ const IndexPage: React.FC = () => {
               hasMobileImg={item.hasMobileImg}
               cardWide={item.cardWide}
             >
-              <Form className="h-full">
+              <Form className='h-full'>
                 <item.Component
                   currentStep={formStep}
                   setCurrentStep={setCurrentStep}
@@ -65,10 +62,10 @@ const IndexPage: React.FC = () => {
               </Form>
             </MainLayout>
           </StepContext.Provider>
-        )
+        );
       }}
     </StepsController>
-  )
-}
+  );
+};
 
-export { IndexPage }
+export { IndexPage };

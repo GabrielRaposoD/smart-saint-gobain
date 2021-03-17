@@ -1,38 +1,34 @@
 // Module Imports
-import React from 'react'
+import React from 'react';
 
 // Application Import
-import { ButtonState } from '@typings/index'
-import { useFormikContext } from 'formik'
+import { ButtonState } from '@typings/index';
+import { useFormikContext } from 'formik';
 
 // Components Import
-import { Button } from '@components/index'
-import { useInfo } from '@store/useInfo'
-import { useSteps } from 'context/formStepsContext'
+import { Button } from '@components/index';
+import { useSteps } from 'context/formStepsContext';
 interface StepperProps {
-  buttonState?: ButtonState
+  buttonState?: ButtonState;
 }
 
 const Stepper: React.FC<StepperProps> = ({ buttonState }) => {
-  const info = useInfo()
-  const formik = useFormikContext()
-  const steps = useSteps()
+  const formik = useFormikContext();
+  const steps = useSteps();
 
   return (
-    <div className="flex justify-start w-full space-x-4">
-      <div className="w-1/2">
+    <div className='flex justify-start w-full space-x-4'>
+      <div className='w-1/2'>
         <Button
-          title="Voltar"
+          title='Voltar'
           state={ButtonState.inverse}
           onClick={() => steps.setCurrentStep(steps.currentStep - 1)}
         />
       </div>
-      <div className="w-1/2">
+      <div className='w-1/2'>
         <Button
-          type="submit"
-          title={
-            info.steps[steps.currentStep] === 7 ? 'Criar Vídeo' : 'Continuar'
-          }
+          type='submit'
+          title={steps.currentStep === 7 ? 'Criar Vídeo' : 'Continuar'}
           state={
             buttonState
               ? buttonState
@@ -43,7 +39,7 @@ const Stepper: React.FC<StepperProps> = ({ buttonState }) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { Stepper }
+export { Stepper };
