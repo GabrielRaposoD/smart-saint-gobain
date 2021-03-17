@@ -6,9 +6,14 @@ import * as Yup from 'yup';
 import { Logo, Stepper, SelectInput, TextInput } from '@components/index';
 import { SmartStep, ButtonState } from '@typings/index';
 import { Field, useFormikContext } from 'formik';
+import { productsLines } from '@mocks/products';
 
 const ProductInfo: SmartStep = () => {
   const formik = useFormikContext<any>();
+
+  const mappedProductLines = productsLines.map((p) => {
+    return { value: p, label: p.name };
+  });
 
   return (
     <div className='md:px-0 md:min-h-0 flex flex-col items-start justify-between h-full min-h-screen px-6'>
@@ -26,27 +31,34 @@ const ProductInfo: SmartStep = () => {
               Insira as informações abaixo para criarmos seus anúncios. Elas
               aparecerão no material final.
             </h3>
-            <div className='mt-6 text-base font-medium text-gray-600'>
+            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
               <label> Qual a linha do produto?</label>
               <Field
                 name='line'
-                options={[{ label: 'placeholder', value: 'placeholder' }]}
+                options={mappedProductLines}
                 component={SelectInput}
               />
             </div>
-            <div className='mt-6 text-base font-medium text-gray-600'>
+            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
               <label> Qual o produto?</label>
               <Field
                 name='product'
-                options={[{ label: 'placeholder', value: 'placeholder' }]}
+                disabled={!formik.values.line}
+                options={
+                  formik.values.line
+                    ? formik.values.line.products.map((p) => {
+                        return { value: p, label: p.name };
+                      })
+                    : null
+                }
                 component={SelectInput}
               />
             </div>
-            <div className='mt-4'>
+            <div className='mt-6 space-y-1'>
               <label> Qual o valor em reais? (Ex:35)</label>
               <TextInput id='valueReal' name='valueReal' placeholder='Digite' />
             </div>
-            <div className='mt-4'>
+            <div className='mt-6 space-y-1'>
               <label> Qual o valor em centavos? (Ex:99)</label>
               <TextInput
                 id='valueCents'

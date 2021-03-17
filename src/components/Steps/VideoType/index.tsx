@@ -8,7 +8,7 @@ import { SelectInput } from '@components/SelectInput';
 import { Option, ButtonState, SmartStep } from '@typings/index';
 import { Field, useFormikContext } from 'formik';
 
-const VideoType: SmartStep = ({ currentStep, setCurrentStep }) => {
+const VideoType: SmartStep = () => {
   const formik = useFormikContext<any>();
 
   const mappedTemplates: Option[] = templates.map((template) => {

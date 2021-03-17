@@ -22,6 +22,8 @@ const initialValues = {
   shopAddress: '',
   shopLogo: null,
   track: null,
+  address: '',
+  phone: '',
   name: '',
   email: '',
   shopName: '',
@@ -46,6 +48,7 @@ const IndexPage: React.FC = () => {
           <StepContext.Provider
             value={{ currentStep: formStep, setCurrentStep }}
           >
+            {JSON.stringify(values)}
             <MainLayout
               img={item.img}
               isCover={item.isCover}
