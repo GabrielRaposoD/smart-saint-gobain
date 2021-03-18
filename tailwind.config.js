@@ -19,6 +19,7 @@ module.exports = {
         primary: '#0E4D95',
         shaft: '#373737',
         green: '#8AD429',
+        red: '#ff2048',
         darkgreen: '#02543d',
         snow: '#E5E5E5',
         background: {
