@@ -1,11 +1,15 @@
 // Module Imports
 import React from 'react';
+import * as Yup from 'yup';
 
 // Components Import
 import { Logo, Stepper, TextInput, MaskedInputField } from '@components/index';
 import { ButtonState, SmartStep } from '@typings/index';
+import { useFormikContext } from 'formik';
 
 const InfoAddress: SmartStep = () => {
+  const formik = useFormikContext<any>();
+
   return (
     <div className='md:px-0 md:min-h-0 md:pb-0 flex flex-col items-start justify-between h-full min-h-screen px-6 pb-10'>
       <div className='flex flex-col'>
@@ -21,7 +25,7 @@ const InfoAddress: SmartStep = () => {
             aparecerão no material final.
           </h3>
         </div>
-        <div className='mt-6 space-y-1'>
+        <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
           <label> Insira o telefone da sua loja (com DDD)</label>
           <MaskedInputField
             mask={[
@@ -46,16 +50,21 @@ const InfoAddress: SmartStep = () => {
             placeholder='(11) 99999-9999'
           />
         </div>
-        <div className='mt-6 space-y-1'>
+        <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
           <label> Insira o endereço do seu comércio (opcional)</label>
           <TextInput id='address' name='address' placeholder='Digite' />
         </div>
       </div>
       <div className='w-full mt-6'>
-        <Stepper buttonState={ButtonState.normal} />
+        <Stepper />
       </div>
     </div>
   );
 };
+
+InfoAddress.validation = Yup.object({
+  phone: Yup.string().required('Este campo é obrigatório'),
+  address: Yup.string().required('Este campo é obrigatório'),
+});
 
 export { InfoAddress };

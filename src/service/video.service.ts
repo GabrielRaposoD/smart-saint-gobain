@@ -2,57 +2,46 @@ import { emailTemplate } from './../mocks/email';
 import axios from 'axios';
 
 export const createVideo = async ({
-  product,
   template,
-  firstName,
-  fullName,
+  product,
+  valueReal,
+  valueCents,
+  track,
+  address,
   phone,
-  company,
-  service,
-  experience,
+  fullname,
+  email,
+  shopName,
+  logo,
+  training,
 }) => {
   const myHeaders = new Headers();
-  myHeaders.append('external-id', 'e5e16966-0218-46ad-a042-04241db0a9de');
-  myHeaders.append('token', 'fe96c4647e55a2496cc3fade6e95b873');
+  const photo1 = await uploadImage(logo);
+  myHeaders.append('external-id', 'c1ca2a24-737a-44ce-8210-5881de5d74cf');
+  myHeaders.append('token', '21c4c6cb615135aa325f21df9818f5dd');
 
   var formdata = new FormData();
-  formdata.append('[video]name', 'smart_bayer');
-  formdata.append('[video]track_id', template.value.trackId);
-  formdata.append('[video]template_id', template.value.id);
-  formdata.append('[video][data]texto_nome_agricultor_01', firstName);
-  formdata.append('[video][data]texto_nome_agricultor_02', firstName);
-  formdata.append('[video][data]texto_contato_01', fullName);
-  formdata.append('[video][data]texto_contato_02', phone);
+  formdata.append('[video]name', fullname);
+  formdata.append('[video]email', fullname);
+  formdata.append('video[email]', email);
+  formdata.append('[video]track_id', track);
+  formdata.append('[video]template_id', template.id);
+  formdata.append('[video][data]text_preco_01', valueReal);
+  formdata.append('[video][data]text_preco_02', valueCents);
+  formdata.append('[video][data]text_telefone_01', phone);
+  formdata.append('[video][data]text_endereco_01', address);
+  formdata.append('[video][data]image_logo_01', photo1.url);
 
-  if (company) {
-    formdata.append('[video][data]texto_produto_01', company.value.description);
-    formdata.append('[video][data]foto_produto_01', product.value.photoUri);
-    formdata.append('[video][data]titulo_hibrido_01', product.value.name);
-    formdata.append('[video][data]texto_hibrido_01', product.value.description);
+  if (product) {
+    formdata.append('[video][data]text_descricao_01', product?.description);
+    formdata.append('[video][data]image_produto_01', product?.photoUri);
   }
 
-  if (service) {
-    formdata.append(
-      '[video][data]titulo_servico_01',
-      service.value.description
-    );
-    formdata.append('[video][data]texto_servico_01', service.value.name);
-    formdata.append('[video][data]foto_servico_01', service.value.photoUri);
-  }
+  if (training) {
+    formdata.append('[video][data]text_titulo_01', training.name);
+    formdata.append('[video][data]text_descricao_01', training.description);
 
-  if (experience) {
-    formdata.append(
-      '[video][data]texto_experiencia_01',
-      experience.value.description
-    );
-    formdata.append(
-      '[video][data]texto_experiencia_02',
-      experience.value.secondDescription
-    );
-    formdata.append(
-      '[video][data]foto_experiencia_01',
-      experience.value.photoUri
-    );
+    formdata.append('[video][data]image_foto_01', training.phhotoUri);
   }
 
   const requestOptions = {
@@ -63,7 +52,31 @@ export const createVideo = async ({
   };
 
   const data = await fetch(
-    'https://api.chiligumvideos.com/api/videos',
+    'https://restless-boat-911d.gabriel-raposo.workers.dev/?https://api.chiligumvideos.com/api/videos',
+    requestOptions
+  ).then((response) => response.json());
+
+  return data;
+};
+
+export const uploadImage = (photo) => {
+  var myHeaders = new Headers();
+  myHeaders.append('external-id', 'e5e16966-0218-46ad-a042-04241db0a9de');
+  myHeaders.append('token', 'fe96c4647e55a2496cc3fade6e95b873');
+
+  var formdata = new FormData();
+  formdata.append('[asset]name', photo.name);
+  formdata.append('[asset]attachment', photo, photo.name);
+
+  const requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: formdata,
+    redirect: 'follow' as RequestRedirect,
+  };
+
+  const data = fetch(
+    'https://restless-boat-911d.gabriel-raposo.workers.dev/?https://api.chiligumvideos.com/api/assets',
     requestOptions
   ).then((response) => response.json());
 

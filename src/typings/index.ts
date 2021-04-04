@@ -32,11 +32,18 @@ export interface Company {
   products: Product[];
 }
 
+export interface Training {
+  name: string;
+  description: string;
+  photoUri: string;
+}
+
 export interface Template {
   id: number;
   type: string;
   steps: number[];
   trackId?: number;
+  isHorizontalTemplate?: boolean;
 }
 
 export interface Option {

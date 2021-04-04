@@ -26,7 +26,7 @@ const MaskedInputField: React.FC<MaskedInputFieldProps> = ({
             className={cs('focus:ring-0 w-full rounded-lg', {
               'border-red-500 hover:border-red-500 focus:border-red-500':
                 meta.error,
-              'border-shift hover:border-green focus:border-green': !meta.error,
+              'border-shift hover:border-primary focus:border-primary': !meta.error,
             })}
             placeholder={placeholder}
             {...field}

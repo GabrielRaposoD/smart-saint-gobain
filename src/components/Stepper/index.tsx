@@ -28,7 +28,11 @@ const Stepper: React.FC<StepperProps> = ({ buttonState }) => {
       <div className='w-1/2'>
         <Button
           type='submit'
-          title={steps.currentStep === 7 ? 'Criar Vídeo' : 'Continuar'}
+          title={
+            formik?.values['template']?.steps[steps.currentStep] === 8
+              ? 'Criar Vídeo'
+              : 'Continuar'
+          }
           state={
             buttonState
               ? buttonState

@@ -43,7 +43,7 @@ const ProductInfo: SmartStep = () => {
               <label> Qual o produto?</label>
               <Field
                 name='product'
-                disabled={!formik.values.line}
+                disabled={formik.values.line !== null ? false : true}
                 options={
                   formik.values.line
                     ? formik.values.line.products.map((p) => {
@@ -54,11 +54,11 @@ const ProductInfo: SmartStep = () => {
                 component={SelectInput}
               />
             </div>
-            <div className='mt-6 space-y-1'>
+            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
               <label> Qual o valor em reais? (Ex:35)</label>
               <TextInput id='valueReal' name='valueReal' placeholder='Digite' />
             </div>
-            <div className='mt-6 space-y-1'>
+            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
               <label> Qual o valor em centavos? (Ex:99)</label>
               <TextInput
                 id='valueCents'
@@ -71,7 +71,10 @@ const ProductInfo: SmartStep = () => {
         <div className='w-full mt-6'>
           <Stepper
             buttonState={
-              formik.values.product && formik.values.line
+              formik.values.product &&
+              formik.values.line &&
+              !formik.errors.valueReal &&
+              !formik.errors.valueCents
                 ? ButtonState.normal
                 : ButtonState.disabled
             }
@@ -83,8 +86,12 @@ const ProductInfo: SmartStep = () => {
 };
 
 ProductInfo.validation = Yup.object({
-  valueCents: Yup.string().max(2, 'O valor só pode ter 2 caracteres'),
-  valueReal: Yup.string().max(2, 'O valor só pode ter 2 caracteres'),
+  valueCents: Yup.string()
+    .required('Este campo é obrigatório')
+    .max(2, 'O valor só pode ter 2 caracteres'),
+  valueReal: Yup.string()
+    .required('Este campo é obrigatório')
+    .max(2, 'O valor só pode ter 2 caracteres'),
 });
 
 export { ProductInfo };

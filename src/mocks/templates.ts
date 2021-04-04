@@ -5,6 +5,7 @@ export const templates: Template[] = [
     id: 833,
     type: 'Vídeo - produto com preço (horizontal)',
     steps: [1, 2, 3, 5, 6, 7, 8, 9, 10],
+    isHorizontalTemplate: true,
   },
   {
     id: 832,
@@ -15,6 +16,7 @@ export const templates: Template[] = [
     id: 828,
     type: 'Vídeo - produto sem preço (horizontal)',
     steps: [1, 2, 3, 5, 6, 7, 8, 9, 10],
+    isHorizontalTemplate: true,
   },
   {
     id: 839,

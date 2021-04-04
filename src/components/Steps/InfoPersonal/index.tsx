@@ -26,15 +26,15 @@ const InfoPersonal: SmartStep = ({ currentStep, setCurrentStep }) => {
               Além de poder baixar, você também receberá o arquivo final por
               email.
             </h3>
-            <div className='2xl:mt-10 mt-8 text-base font-medium text-gray-600'>
+            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
               <label>Seu primeiro nome</label>
               <TextInput name='fullname' placeholder='Digite' />
             </div>
-            <div className='2xl:mt-10 mt-8 text-base font-medium text-gray-600'>
+            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
               <label>Seu e-mail </label>
               <TextInput name='email' placeholder='Digite' />
             </div>
-            <div className='2xl:mt-10 mt-8 text-base font-medium text-gray-600'>
+            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
               <label>Nome da sua loja </label>
               <TextInput name='shopName' id='shopName' placeholder='Digite' />
             </div>
@@ -55,6 +55,7 @@ InfoPersonal.validation = Yup.object({
   email: Yup.string()
     .email('E-mail incorreto')
     .required('Insira seu e-mail completo'),
+  shopName: Yup.string().required('Insira seu e-mail completo'),
 });
 
 export { InfoPersonal };

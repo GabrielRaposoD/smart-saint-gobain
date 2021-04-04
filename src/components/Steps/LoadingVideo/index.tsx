@@ -1,6 +1,7 @@
 // Module Imports
 import React, { useEffect } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import { useFormikContext } from 'formik';
 
 // Components Import
 import { Logo } from '@components/index';
@@ -24,8 +25,10 @@ const LoadingVideo: SmartStep = ({ currentStep, setCurrentStep }) => {
 
 const LoadingVideoComponent: SmartStep = ({ setCurrentStep, currentStep }) => {
   const myHeaders = new Headers();
-  myHeaders.append('external-id', 'e5e16966-0218-46ad-a042-04241db0a9de');
-  myHeaders.append('token', 'fe96c4647e55a2496cc3fade6e95b873');
+  const formik = useFormikContext<any>();
+
+  myHeaders.append('external-id', 'c1ca2a24-737a-44ce-8210-5881de5d74cf');
+  myHeaders.append('token', '21c4c6cb615135aa325f21df9818f5dd');
   const requestOptions = {
     method: 'GET',
     headers: myHeaders,
@@ -36,12 +39,12 @@ const LoadingVideoComponent: SmartStep = ({ setCurrentStep, currentStep }) => {
     'repoData',
     () =>
       fetch(
-        `https://api.chiligumvideos.com/api/videos/${video.id}`,
+        `https://restless-boat-911d.gabriel-raposo.workers.dev/?https://api.chiligumvideos.com/api/videos/${formik.values.video.id}`,
         requestOptions
       ).then((res) => res.json()),
     {
       refetchInterval: 5000,
-      enabled: Boolean(video.id),
+      enabled: Boolean(formik.values.video.id),
       cacheTime: 0,
       keepPreviousData: false,
       refetchOnMount: true,
@@ -51,6 +54,7 @@ const LoadingVideoComponent: SmartStep = ({ setCurrentStep, currentStep }) => {
 
   useEffect(() => {
     if (data && data.processed) {
+      formik.setFieldValue('video', data);
       setCurrentStep(currentStep + 1);
     }
   }, [data]);
@@ -61,7 +65,7 @@ const LoadingVideoComponent: SmartStep = ({ setCurrentStep, currentStep }) => {
         <Logo />
       </div>
       <div className='flex flex-col items-center self-center justify-center mt-40'>
-        <BiLoaderAlt className='text-9xl animate-spin text-green' />
+        <BiLoaderAlt className='text-9xl animate-spin text-primary' />
         <h1 className='md:text-4xl text-2xl font-bold leading-snug text-gray-800'>
           Aguarde, estamos criando seu vídeo
         </h1>

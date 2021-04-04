@@ -1,16 +1,17 @@
 // Module Imports
-import React from 'react'
+import React from 'react';
 
 // Application Import
-import { MainLayout } from '@layout/index'
+import { MainLayout } from '@layout/index';
 
 // Components Import
-import { StepsController } from '@components/StepsController'
-import { items as StepItems } from 'mocks/screenComponents'
-import { Form } from 'formik'
-import { StepContext } from 'context/formStepsContext'
+import { StepsController } from '@components/StepsController';
+import { items as StepItems } from 'mocks/screenComponents';
+import { Form } from 'formik';
+import { StepContext } from 'context/formStepsContext';
 
-import { templates } from '@mocks/templates'
+import { templates } from '@mocks/templates';
+import { createVideo } from 'service/video.service';
 
 const initialValues = {
   template: null,
@@ -18,53 +19,66 @@ const initialValues = {
   product: null,
   valueReal: '',
   valueCents: '',
-  shopPhone: '',
-  shopAddress: '',
-  shopLogo: null,
   track: null,
   address: '',
   phone: '',
   name: '',
   email: '',
   shopName: '',
-  // Logo State
+  video: { id: '' },
   logo: null,
   logoError: null,
-}
+  training: null,
+};
 
 const IndexPage: React.FC = () => {
-  const video = {}
-  async function handleSubmit(values) {
-    console.log('submit', values)
+  async function handleSubmit(values, { setFieldValue }) {
+    const data = await createVideo({ ...values });
+    return setFieldValue('video', data);
   }
 
   return (
     <StepsController initialValues={initialValues} onSubmit={handleSubmit}>
       {({ currentStep: formStep, setCurrentStep, values }) => {
-        const template = templates.find((t) => t.id === values.template?.id) || { steps: [1, 2, 3] }
-        const currentStep = template.steps[formStep] || 0
-        const item = StepItems[formStep > 0 ? currentStep - 1 : formStep]
+        const template = templates.find(
+          (t) => t.id === values.template?.id
+        ) || { steps: [1, 2, 3], isHorizontalTemplate: false };
+        const currentStep = template.steps[formStep] || 0;
+        const item = StepItems[formStep > 0 ? currentStep - 1 : formStep];
 
         return (
-          <StepContext.Provider value={{ currentStep: formStep, setCurrentStep }}>
-            {JSON.stringify(values)}
-            <MainLayout
-              img={item.img}
-              isCover={item.isCover}
-              hasCard={item.hasCard}
-              cardImg={video.thumbnail_url || item.cardImg}
-              hasMobileImg={item.hasMobileImg}
-              cardWide={item.cardWide}
-            >
-              <Form className="h-full">
-                <item.Component currentStep={formStep} setCurrentStep={setCurrentStep} />
+          <StepContext.Provider
+            value={{ currentStep: formStep, setCurrentStep }}
+          >
+            {template.steps[formStep] === 9 ? (
+              <Form className='w-full h-full'>
+                <item.Component
+                  currentStep={formStep}
+                  setCurrentStep={setCurrentStep}
+                />
               </Form>
-            </MainLayout>
+            ) : (
+              <MainLayout
+                img={item?.img}
+                isCover={item?.isCover}
+                hasCard={item?.hasCard}
+                cardImg={values?.video.thumbnail_url || item?.cardImg}
+                hasMobileImg={item?.hasMobileImg}
+                cardWide={template?.isHorizontalTemplate}
+              >
+                <Form className='w-full h-full'>
+                  <item.Component
+                    currentStep={formStep}
+                    setCurrentStep={setCurrentStep}
+                  />
+                </Form>
+              </MainLayout>
+            )}
           </StepContext.Provider>
-        )
+        );
       }}
     </StepsController>
-  )
-}
+  );
+};
 
-export { IndexPage }
+export { IndexPage };

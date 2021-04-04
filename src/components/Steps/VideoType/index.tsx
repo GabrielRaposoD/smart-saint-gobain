@@ -48,6 +48,4 @@ const VideoType: SmartStep = () => {
   );
 };
 
-// VideoType.validation = Yup.object().shape({})
-
 export { VideoType };

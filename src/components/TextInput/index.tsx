@@ -16,9 +16,9 @@ const TextInput: React.FC<TextInputProps> = ({ id, name, placeholder }) => {
             name={name}
             type='text'
             className={cs('focus:ring-0 w-full rounded-lg', {
-              'border-red-500 hover:border-red-500 focus:border-red-500':
+              'border-red-500 hover:border-red-500 focus:border-red':
                 meta.error,
-              'border-shift hover:border-green focus:border-green': !meta.error,
+              'border-shift hover:border-primary focus:border-primary': !meta.error,
             })}
             placeholder={placeholder}
             {...field}
