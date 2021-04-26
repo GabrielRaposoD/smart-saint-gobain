@@ -22,10 +22,10 @@ const VideoType: SmartStep = () => {
           <Logo />
         </div>
         <div className='mt-16'>
-          <h1 className='text-shaft md:text-4xl text-2xl font-bold leading-snug'>
+          <h1 className='2xl:text-4xl md:text-3xl text-xl font-bold leading-snug text-gray-800'>
             Que tipo de anúncio você gostaria de criar?
           </h1>
-          <h3 className='text-shaft md:text-2xl mt-3 text-base font-medium'>
+          <h3 className='text-shaft 2xl:text-2xl mt-3 text-base font-medium'>
             Escolha nas opções abaixo o que melhor te atende.
           </h3>
           <div className='mt-4'>

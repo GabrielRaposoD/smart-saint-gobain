@@ -1,4 +1,5 @@
 import cs from 'clsx';
+import { useFormikContext } from 'formik';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -8,6 +9,7 @@ interface MainLayoutProps {
   cardWide?: boolean;
   cardImg?: string;
   hasMobileImg?: boolean;
+  currentStep?: number;
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({
@@ -18,7 +20,27 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   cardWide,
   cardImg,
   hasMobileImg = false,
+  currentStep,
 }: MainLayoutProps) => {
+  const formik = useFormikContext<any>();
+  const preview =
+    currentStep === 3
+      ? formik.values.template?.productPreview
+        ? formik.values.template.productPreview
+        : cardImg
+      : currentStep === 4
+      ? formik.values.template?.trainingPreview
+        ? formik.values.template.trainingPreview
+        : cardImg
+      : currentStep === 5
+      ? formik.values.template?.infoPreview
+        ? formik.values.template.infoPreview
+        : cardImg
+      : currentStep === 6
+      ? formik.values.template?.infoPreview
+        ? formik.values.template.infoPreview
+        : cardImg
+      : cardImg;
   return (
     <div className='md:flex-row md:justify-between md:max-h-screen flex flex-col-reverse justify-end w-full min-h-screen'>
       <div
@@ -38,22 +60,22 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         )}
       >
         {hasCard && (
-          <div className='bg-snow 2xl:mt-28 2xl:w-6/12 relative z-10 w-8/12 py-2 mt-16 text-center rounded-lg'>
-            <p>o material abaixo é apenas um modelo para visualização</p>
-          </div>
-        )}
-        {cardImg && (
-          <img
-            src={cardImg}
-            alt=''
-            className={cs('z-10 rounded-lg shadow-2xl', {
-              'mt-4': hasCard && !cardWide,
-              'mt-20': hasCard && cardWide,
-              'mt-40 pt-2': !hasCard,
-              'w-9/12': cardWide,
-              '2xl:w-80 w-72': !cardWide,
-            })}
-          />
+          <>
+            <div className='bg-snow 2xl:mt-28 2xl:w-6/12 relative z-10 w-8/12 py-2 mt-16 text-center rounded-lg'>
+              <p>o material abaixo é apenas um modelo para visualização</p>
+            </div>
+            <img
+              src={preview}
+              alt=''
+              className={cs('z-10 rounded-lg shadow-2xl', {
+                'mt-4': hasCard && !cardWide,
+                'mt-20': hasCard && cardWide,
+                'mt-40 pt-2': !hasCard,
+                'w-9/12 max-h-96': cardWide,
+                'max-h-[32rem]': !cardWide,
+              })}
+            />
+          </>
         )}
         <img
           src={img}

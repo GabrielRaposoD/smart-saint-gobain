@@ -53,7 +53,7 @@ const IndexPage: React.FC = () => {
             {template.steps[formStep] === 9 ? (
               <Form className='w-full h-full'>
                 <item.Component
-                  currentStep={formStep}
+                  currentStep={currentStep}
                   setCurrentStep={setCurrentStep}
                 />
               </Form>
@@ -65,10 +65,11 @@ const IndexPage: React.FC = () => {
                 cardImg={values?.video.thumbnail_url || item?.cardImg}
                 hasMobileImg={item?.hasMobileImg}
                 cardWide={template?.isHorizontalTemplate}
+                currentStep={currentStep}
               >
                 <Form className='w-full h-full'>
                   <item.Component
-                    currentStep={formStep}
+                    currentStep={currentStep}
                     setCurrentStep={setCurrentStep}
                   />
                 </Form>

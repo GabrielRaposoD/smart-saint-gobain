@@ -1,4 +1,8 @@
-export default async function downloadUrl(url: string, name?: string) {
+export default async function downloadUrl(
+  url: string,
+  extension: string = 'mp4',
+  name?: string
+) {
   return await fetch(url, {
     method: 'GET',
   })
@@ -7,7 +11,9 @@ export default async function downloadUrl(url: string, name?: string) {
       var url = window.URL.createObjectURL(blob);
       var a = document.createElement('a');
       a.href = url;
-      a.download = name ? `bayer_${name}.mp4` : 'bayer_video.mp4';
+      a.download = name
+        ? `saint_gobain_${name}.${extension}`
+        : `saint_gobain.${extension}`;
       document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
       a.click();
       a.remove(); //afterwards we remove the element again

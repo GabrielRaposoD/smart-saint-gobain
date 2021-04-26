@@ -19,22 +19,22 @@ const InfoPersonal: SmartStep = ({ currentStep, setCurrentStep }) => {
             <Logo />
           </div>
           <div className='mt-16'>
-            <h1 className='md:text-4xl text-2xl font-bold leading-snug text-gray-800'>
+            <h1 className='2xl:text-4xl md:text-3xl text-xl font-bold leading-snug text-gray-800'>
               Última etapa. Insira suas informações
             </h1>
             <h3 className='mt-3 text-base font-medium text-gray-600'>
               Além de poder baixar, você também receberá o arquivo final por
               email.
             </h3>
-            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
+            <div className='2xl:mt-6 mt-3 space-y-1 text-base font-medium text-gray-600'>
               <label>Seu primeiro nome</label>
               <TextInput name='fullname' placeholder='Digite' />
             </div>
-            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
+            <div className='2xl:mt-6 mt-3 space-y-1 text-base font-medium text-gray-600'>
               <label>Seu e-mail </label>
               <TextInput name='email' placeholder='Digite' />
             </div>
-            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
+            <div className='2xl:mt-6 mt-3 space-y-1 text-base font-medium text-gray-600'>
               <label>Nome da sua loja </label>
               <TextInput name='shopName' id='shopName' placeholder='Digite' />
             </div>

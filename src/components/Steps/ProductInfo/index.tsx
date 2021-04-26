@@ -10,7 +10,6 @@ import { productsLines } from '@mocks/products';
 
 const ProductInfo: SmartStep = () => {
   const formik = useFormikContext<any>();
-
   const mappedProductLines = productsLines.map((p) => {
     return { value: p, label: p.name };
   });
@@ -23,15 +22,14 @@ const ProductInfo: SmartStep = () => {
             <Logo />
           </div>
           <div className='mt-16'>
-            <h1 className='md:text-4xl text-2xl font-bold leading-snug text-gray-800'>
-              Quais são as informações do seu <br />
-              anúncio?
+            <h1 className='2xl:text-4xl md:text-3xl text-xl font-bold leading-snug text-gray-800'>
+              Quais são as informações do seu anúncio?
             </h1>
             <h3 className='mt-3 text-base font-medium text-gray-600'>
-              Insira as informações abaixo para criarmos seus anúncios. Elas
-              aparecerão no material final.
+              Insira as informações abaixo para criarmos seu anúncio. Elas
+              aparecerão no material finalizado.
             </h3>
-            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
+            <div className='2xl:mt-6 mt-3 space-y-1 text-base font-medium text-gray-600'>
               <label> Qual a linha do produto?</label>
               <Field
                 name='line'
@@ -39,7 +37,7 @@ const ProductInfo: SmartStep = () => {
                 component={SelectInput}
               />
             </div>
-            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
+            <div className='2xl:mt-6 mt-3 space-y-1 text-base font-medium text-gray-600'>
               <label> Qual o produto?</label>
               <Field
                 name='product'
@@ -54,18 +52,26 @@ const ProductInfo: SmartStep = () => {
                 component={SelectInput}
               />
             </div>
-            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
-              <label> Qual o valor em reais? (Ex:35)</label>
-              <TextInput id='valueReal' name='valueReal' placeholder='Digite' />
-            </div>
-            <div className='mt-6 space-y-1 text-base font-medium text-gray-600'>
-              <label> Qual o valor em centavos? (Ex:99)</label>
-              <TextInput
-                id='valueCents'
-                name='valueCents'
-                placeholder='Digite'
-              />
-            </div>
+            {formik.values.template.hasPrice && (
+              <>
+                <div className='2xl:mt-6 mt-3 space-y-1 text-base font-medium text-gray-600'>
+                  <label> Qual o valor em reais? (Ex:35)</label>
+                  <TextInput
+                    id='valueReal'
+                    name='valueReal'
+                    placeholder='Digite'
+                  />
+                </div>
+                <div className='2xl:mt-6 mt-3 space-y-1 text-base font-medium text-gray-600'>
+                  <label> Qual o valor em centavos? (Ex:99)</label>
+                  <TextInput
+                    id='valueCents'
+                    name='valueCents'
+                    placeholder='Digite'
+                  />
+                </div>
+              </>
+            )}
           </div>
         </div>
         <div className='w-full mt-6'>
@@ -86,12 +92,8 @@ const ProductInfo: SmartStep = () => {
 };
 
 ProductInfo.validation = Yup.object({
-  valueCents: Yup.string()
-    .required('Este campo é obrigatório')
-    .max(2, 'O valor só pode ter 2 caracteres'),
-  valueReal: Yup.string()
-    .required('Este campo é obrigatório')
-    .max(2, 'O valor só pode ter 2 caracteres'),
+  valueCents: Yup.string().max(2, 'O valor só pode ter no máximo 2 caracteres'),
+  valueReal: Yup.string().max(3, 'O valor só pode ter no máximo 3 caracteres'),
 });
 
 export { ProductInfo };

@@ -30,7 +30,7 @@ const Stepper: React.FC<StepperProps> = ({ buttonState }) => {
           type='submit'
           title={
             formik?.values['template']?.steps[steps.currentStep] === 8
-              ? 'Criar Vídeo'
+              ? 'Criar Anúncio'
               : 'Continuar'
           }
           state={

@@ -44,6 +44,11 @@ export interface Template {
   steps: number[];
   trackId?: number;
   isHorizontalTemplate?: boolean;
+  extension?: string;
+  hasPrice?: boolean;
+  productPreview?: string;
+  infoPreview?: string;
+  trainingPreview?: string;
 }
 
 export interface Option {

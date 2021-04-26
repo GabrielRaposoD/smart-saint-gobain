@@ -32,12 +32,12 @@ export const LogoUpload: SmartStep = () => {
           <Logo />
         </div>
         <div className='w-full mt-16'>
-          <h1 className='md:text-4xl text-2xl font-bold leading-snug text-gray-800'>
+          <h1 className='2xl:text-4xl md:text-3xl text-xl font-bold leading-snug text-gray-800'>
             Insira o logo da sua loja
           </h1>
-          <div className='rounded-xl px-6 py-3 mt-10 text-base font-medium text-gray-800 bg-gray-200'>
+          <div className='rounded-xl 2xl:text-base px-6 py-3 mt-10 text-sm font-medium text-gray-800 bg-gray-200'>
             <p>Para melhor aproveitamento da sua marca, recomendamos:</p>
-            <ul className='mt-2 space-y-1 list-inside'>
+            <ul className=' mt-2 space-y-1 list-inside'>
               <li>- Formato PNG ou JPG</li>
               <li>- Fundo transparente</li>
               <li>- Peso máximo de 2MB</li>
@@ -64,7 +64,7 @@ export const LogoUpload: SmartStep = () => {
               >
                 Substituir Imagem
               </label>
-              <div className='rounded-xl bg-green w-full px-4 py-3 mt-10 text-base font-thin leading-relaxed tracking-wider text-white'>
+              <div className='rounded-xl bg-green 2xl:text-base w-full px-4 py-3 mt-10 text-sm font-thin leading-relaxed tracking-wider text-white'>
                 Sua imagem foi carregada com sucesso!
               </div>
             </div>
@@ -72,7 +72,7 @@ export const LogoUpload: SmartStep = () => {
             <div className='w-full mt-10'>
               <div className='w-7/12 text-base font-medium text-gray-600'>
                 <label
-                  className='border-primary bg-primary w-full px-20 py-3 text-xl font-medium text-white border border-solid rounded-full'
+                  className='border-primary bg-primary 2xl:px-20 2xl:text-xl w-full px-8 py-3 font-medium text-white border border-solid rounded-full'
                   htmlFor='logo-input'
                 >
                   Carregar Imagem

@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       disabled={state === ButtonState.disabled ? true : false}
-      className={cs('w-full rounded-full py-2 text-xl font-medium', {
+      className={cs('w-full rounded-full py-2 2xl:text-xl font-medium', {
         'border border-primary border-solid bg-primary text-white':
           state === ButtonState.normal,
         'border border-gray-200 border-solid bg-gray-200 text-gray-700':

@@ -13,8 +13,6 @@ import { RadioInput } from '@components/RadioInput';
 const TrackSelect: SmartStep = () => {
   const formik = useFormikContext<any>();
 
-  console.log(formik.values.track);
-
   return (
     <div className='md:px-0 md:min-h-0 md:pb-0 flex flex-col items-start justify-between h-full min-h-screen px-6 pb-10'>
       <div className='flex flex-col'>
@@ -22,7 +20,7 @@ const TrackSelect: SmartStep = () => {
           <Logo />
         </div>
         <div className='xl:mt-16 mt-10'>
-          <h1 className='md:text-4xl text-2xl font-bold leading-snug text-gray-800'>
+          <h1 className='2xl:text-4xl md:text-3xl text-xl font-bold leading-snug text-gray-800'>
             Escolha uma trilha sonora para o seu anúncio
           </h1>
           <h3 className='mt-3 text-base font-medium text-gray-600'>

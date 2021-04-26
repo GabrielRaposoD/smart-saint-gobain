@@ -1,6 +1,7 @@
 module.exports = {
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   prefix: '',
+  mode: 'jit',
   important: false,
   separator: ':',
   darkMode: 'media',

@@ -56,11 +56,10 @@ export const items: ScreenComponent[] = [
     cardImg: 'img/preview-address.png',
   },
   {
-    img: '/img/background-main-3.png',
+    img: '/img/background-main-5.png',
     Component: TrackSelect,
     validation: TrackSelect.validation,
-    hasCard: true,
-    cardImg: 'img/preview-address.png',
+    isCover: true,
   },
   {
     img: '/img/background-main-4.png',

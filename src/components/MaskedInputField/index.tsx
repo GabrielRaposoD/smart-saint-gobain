@@ -22,6 +22,7 @@ const MaskedInputField: React.FC<MaskedInputFieldProps> = ({
           <MaskedInput
             name={name}
             mask={mask}
+            guide={false}
             type='text'
             className={cs('focus:ring-0 w-full rounded-lg', {
               'border-red-500 hover:border-red-500 focus:border-red-500':
