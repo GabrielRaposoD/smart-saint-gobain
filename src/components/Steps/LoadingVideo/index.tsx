@@ -39,7 +39,7 @@ const LoadingVideoComponent: SmartStep = ({ setCurrentStep, currentStep }) => {
     'repoData',
     () =>
       fetch(
-        `https://restless-boat-911d.gabriel-raposo.workers.dev/?https://api.chiligumvideos.com/api/videos/${formik.values.video.id}`,
+        `https://api.chiligumvideos.com/api/videos/${formik.values.video.id}`,
         requestOptions
       ).then((res) => res.json()),
     {
@@ -67,11 +67,11 @@ const LoadingVideoComponent: SmartStep = ({ setCurrentStep, currentStep }) => {
       <div className='flex flex-col items-center self-center justify-center mt-40'>
         <BiLoaderAlt className='text-9xl animate-spin text-primary' />
         <h1 className='2xl:text-4xl md:text-3xl text-xl font-bold leading-snug text-gray-800'>
-          Aguarde, estamos criando seu anúncio
+          Estamos Criando o seu anúncio.
         </h1>
         <h3 className='md:text-xl mt-3 text-base font-medium text-gray-600'>
-          Assim que o anúncio estiver pronto, enviaremos o link de download para
-          o seu e-mail.
+          Assim que o anúncio estiver criado, você poderá fazer download por
+          aqui mesmo. Mas também te enviaremos um link por e-mail.
         </h3>
       </div>
     </div>

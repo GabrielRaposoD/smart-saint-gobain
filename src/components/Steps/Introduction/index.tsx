@@ -16,11 +16,14 @@ const Introduction: SmartStep = () => {
         <h1 className='text-shaft 2xl:text-4xl text-2xl font-bold'>
           Experiência Saint-Gobain
         </h1>
-        <h3 className='text-shaft 2xl:text-2xl mt-3 text-base font-medium'>
+        <h3 className='text-shaft 2xl:text-2xl lg:block hidden mt-3 text-base font-medium'>
           Crie seu próprio anúncio e compartilhe com seus
         </h3>
-        <h3 className='text-shaft 2xl::text-2xl text-base font-medium'>
+        <h3 className='text-shaft 2xl:text-2xl lg:block hidden text-base font-medium'>
           clientes.
+        </h3>
+        <h3 className='text-shaft 2xl:text-2xl lg:hidden mt-3 text-base font-medium'>
+          Crie seu próprio anúncio e compartilhe com seus clientes.
         </h3>
       </div>
       <div className='md:mt-0 w-full mt-24'>

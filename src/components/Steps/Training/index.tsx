@@ -29,7 +29,7 @@ const Training: SmartStep = () => {
             aparecerão no material finalizado.
           </h3>
           <div className='2xl:mt-6 mt-3 space-y-1 text-base font-medium text-gray-600'>
-            <label> Qual a linha do treinamento?</label>
+            <label> Selecione um Curso</label>
             <Field
               name='training'
               options={mappedTraining}

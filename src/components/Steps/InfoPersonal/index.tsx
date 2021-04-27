@@ -51,11 +51,11 @@ const InfoPersonal: SmartStep = ({ currentStep, setCurrentStep }) => {
 InfoPersonal.validation = Yup.object({
   fullname: Yup.string()
     .max(17, 'O Nome não pode passar de 17 caracteres')
-    .required('Insira seu nome completo'),
+    .required('Insira seu primeiro nome'),
   email: Yup.string()
     .email('E-mail incorreto')
     .required('Insira seu e-mail completo'),
-  shopName: Yup.string().required('Insira seu e-mail completo'),
+  shopName: Yup.string().required('Insira o nome da sua loja'),
 });
 
 export { InfoPersonal };

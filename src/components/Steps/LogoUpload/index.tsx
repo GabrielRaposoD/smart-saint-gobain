@@ -70,7 +70,7 @@ export const LogoUpload: SmartStep = () => {
             </div>
           ) : (
             <div className='w-full mt-10'>
-              <div className='w-7/12 text-base font-medium text-gray-600'>
+              <div className='w-full text-base font-medium text-gray-600'>
                 <label
                   className='border-primary bg-primary 2xl:px-20 2xl:text-xl w-full px-8 py-3 font-medium text-white border border-solid rounded-full'
                   htmlFor='logo-input'

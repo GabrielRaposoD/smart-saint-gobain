@@ -52,7 +52,7 @@ export const createVideo = async ({
   };
 
   const data = await fetch(
-    'https://restless-boat-911d.gabriel-raposo.workers.dev/?https://api.chiligumvideos.com/api/videos',
+    'https://api.chiligumvideos.com/api/videos',
     requestOptions
   ).then((response) => response.json());
 
@@ -76,7 +76,7 @@ export const uploadImage = (photo) => {
   };
 
   const data = fetch(
-    'https://restless-boat-911d.gabriel-raposo.workers.dev/?https://api.chiligumvideos.com/api/assets',
+    'https://api.chiligumvideos.com/api/assets',
     requestOptions
   ).then((response) => response.json());
 
