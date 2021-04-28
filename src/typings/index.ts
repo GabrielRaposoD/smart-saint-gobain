@@ -48,6 +48,7 @@ export interface Template {
   hasPrice?: boolean
   productPreview?: string
   infoPreview?: string
+  mediaType: 'video' | 'image'
   trainingPreview?: string
 }
 

@@ -63,7 +63,7 @@ const IndexPage: React.FC = () => {
               <MainLayout
                 img={item?.img}
                 isCover={item?.isCover}
-                hasCard={item?.hasCard}
+                hasCard={true}
                 cardImg={values?.video.thumbnail_url || item?.cardImg}
                 hasMobileImg={item?.hasMobileImg}
                 cardWide={template?.isHorizontalTemplate}
