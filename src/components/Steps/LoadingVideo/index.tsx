@@ -34,12 +34,11 @@ const LoadingVideoComponent: SmartStep = ({ setCurrentStep, currentStep }) => {
     headers: myHeaders,
     redirect: 'follow' as RequestRedirect,
   };
-
   const { data } = useQuery(
     'repoData',
     () =>
       fetch(
-        `https://api.chiligumvideos.com/api/videos/${formik.values.video.id}`,
+        `https://restless-boat-911d.gabriel-raposo.workers.dev/?https://api.chiligumvideos.com/api/videos/${formik.values.video.id}`,
         requestOptions
       ).then((res) => res.json()),
     {

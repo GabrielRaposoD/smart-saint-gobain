@@ -45,6 +45,7 @@ const IndexPage: React.FC = () => {
         ) || { steps: [1, 2, 3], isHorizontalTemplate: false };
         const currentStep = template.steps[formStep] || 0;
         const item = StepItems[formStep > 0 ? currentStep - 1 : formStep];
+        console.log(currentStep);
 
         return (
           <StepContext.Provider

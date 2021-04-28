@@ -52,7 +52,7 @@ export const createVideo = async ({
   };
 
   const data = await fetch(
-    'https://api.chiligumvideos.com/api/videos',
+    'https://restless-boat-911d.gabriel-raposo.workers.dev/?https://api.chiligumvideos.com/api/videos',
     requestOptions
   ).then((response) => response.json());
 
@@ -61,8 +61,8 @@ export const createVideo = async ({
 
 export const uploadImage = (photo) => {
   var myHeaders = new Headers();
-  myHeaders.append('external-id', 'e5e16966-0218-46ad-a042-04241db0a9de');
-  myHeaders.append('token', 'fe96c4647e55a2496cc3fade6e95b873');
+  myHeaders.append('external-id', 'c1ca2a24-737a-44ce-8210-5881de5d74cf');
+  myHeaders.append('token', '21c4c6cb615135aa325f21df9818f5dd');
 
   var formdata = new FormData();
   formdata.append('[asset]name', photo.name);
@@ -76,7 +76,7 @@ export const uploadImage = (photo) => {
   };
 
   const data = fetch(
-    'https://api.chiligumvideos.com/api/assets',
+    'https://restless-boat-911d.gabriel-raposo.workers.dev/?https://api.chiligumvideos.com/api/assets',
     requestOptions
   ).then((response) => response.json());
 
