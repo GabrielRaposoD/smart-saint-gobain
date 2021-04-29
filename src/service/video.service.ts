@@ -40,8 +40,7 @@ export const createVideo = async ({
   if (training) {
     formdata.append('[video][data]text_titulo_01', training.name);
     formdata.append('[video][data]text_descricao_01', training.description);
-
-    formdata.append('[video][data]image_foto_01', training.phhotoUri);
+    formdata.append('[video][data]image_foto_01', training.photoUri);
   }
 
   const requestOptions = {

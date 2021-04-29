@@ -18,6 +18,7 @@ export const items: ScreenComponent[] = [
     Component: Introduction,
     validation: Introduction.validation,
     isCover: true,
+    hasCard: false,
     hasMobileImg: true,
   },
   {
@@ -62,11 +63,12 @@ export const items: ScreenComponent[] = [
     isCover: true,
   },
   {
-    img: '/img/background-main-4.png',
+    img: '/img/background-main-3.png',
     Component: InfoPersonal,
     validation: InfoPersonal.validation,
-    hasCard: false,
-    isCover: true,
+    hasCard: true,
+    cardImg: 'img/background-main-4.png',
+    isCover: false,
   },
   {
     img: '/img/background-main-3.png',
@@ -77,6 +79,7 @@ export const items: ScreenComponent[] = [
     img: '/img/background-main-3.png',
     Component: VideoDone,
     validation: VideoDone.validation,
+    hasCard: true,
     cardImg: 'img/preview-done.png',
   },
 ];
