@@ -129,7 +129,7 @@ export const productsLines: ProductLine[] = [
 · Ideal para reformas
 · Revestimentos de até 120 x 120 cm`,
         photoUri:
-          'https://d20aasqov94ke3.cloudfront.net/gallery/images/e279e0cf7ef2c67dd165707715fc3414e2bcfe8f.png?Expires=1678905910&Signature=kmZ0sbOnQOY3ykeEe1VrtUwzfrkisBVX6HuENwq8-r2LP8dpWHiQBy4Devd7dz9p96R8wJxjcnH2qLJNDihIL54ju0CFXCVyDndP1wa~a7ndWucDPfpsYpDGeTCYfuTHfemM6ZpAgslYqbqxwQcGA1UZRVoRWqhbhHqYZjEtJnHIU142L3loTfYn9CbADH60PYvBYNs9aso5NqVW7tukyrXllCQ6CdP6Y2w9LthiHbVY3qd2nVhp04OrAoPn3sc3nM6QGjWZZd6pO8WrDYITPsiDPabl95-Ud1VZ5uAewXmjFSVpXYulO5P7ao7NpS8ZViFdZpT6voIrwMgNk7YW-w__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
+          'https://d20aasqov94ke3.cloudfront.net/gallery/images/388881eab4e608c5be24c7c2eec29202d4fa86c0.png?Expires=1679070238&Signature=Q-LjERgB6eJpREWtTtQrPNq6an5LTnvAfoHYl2NnFsTO4GOuIlpccwuTjZwmCH9gAjjWHJPRCqXN1pK8CShSDwjSnS2xaQGGyWs6fXUnwn0exUxX0wujwuYdBCFjQJgIdEdAb2HgdltNiQ8mcL2j9pActs1AkGkrTJGb~M1u4TQrD4PJCtN2Ozwo9jafbIJpOK1Y-OwZsZJDAH0DChwbIH1arl1JoGeByOahU-LWSeeaGdh6udJUPo~FGWYCbVd8yVtFJVa~xJH26kkuXFNIzFB2usEexBxdhX5XfieZ8VjPQ~ZqUsasUMT66Hu29SQOt2SsINJ6QEG3Hmy37IrVuA__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
       },
       {
         name:
@@ -139,7 +139,7 @@ export const productsLines: ProductLine[] = [
 · Ideal para reformas
 · Revestimentos de até 120 x 120 cm`,
         photoUri:
-          'https://d20aasqov94ke3.cloudfront.net/gallery/images/e264ca33e4a0fd7d731a7bfa02e9b02678cf1b92.png?Expires=1678906065&Signature=ggA5XUqmE93Dldcpxq0D-nm~7elryTeYegCzjpKT5ry7juQ6btjfxAUQEybx9fp~~eOVzzPUWMmrSAu5WhkYdAKHii8IlPvtgGa3VL3qcAa-zZQff-hHxjshBy0i2BmrgQMLzQNhF4fjS8npYPWDZq69AaV6KclGV0huzqQMToChrtd4jObzDKrMRMiseLuCDBMre8i-w00JScYH7nf0LBdaAQHCXjuyz-owc8ZZ3-lKiWtJBSTHh5ZerJAMfG2Zs48q1cFLYmTIoVVlbxq6qY6NO8nWkZ9PlOzfhdSEDM9D3evHNklziCUsAndA8N6lLO98JYD-Aj9Xz4lFB48voQ__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
+          'https://d20aasqov94ke3.cloudfront.net/gallery/images/b9bb6ef2bf8a40aaf1d630a8196311634c3bb5ff.png?Expires=1679070340&Signature=BnQBahivRPt~hsS2MFy7aw2fvvLsZKujTTN-3OztooL938bpPEblVbTXlZip2sQkjc5atXOVDRh604pgD3a1dv5mx0XFT61ceLmCS9dcD9nuwoujsCtA9Dd5Btrm8PTryWZI0YH7KruT0HVcdVEtMeIf~4SY1zjvmaOZ3jEfWD9YK510sSt77D6VMY3qwO7mTRLzI3wg59WFz~KfVVM7Dw7EnlRVEwGXGzt~dAzwAAkJTaxr9Oo07krAYJLDGCB7EsI1SiwIDVQjPDdZhoTHEyL6gjwJfwYP3r4aushq3rPpYCGkqTMtvP1xsxJ8CLfmBdP9mXRUkP~z6mZSTIdv3A__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
       },
       {
         name:

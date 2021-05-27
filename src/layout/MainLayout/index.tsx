@@ -75,7 +75,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                 'mt-40 pt-2 !w-9/12': !hasCard,
                 'w-9/12 max-h-96': cardWide && currentStep !== 8,
                 'max-h-[32rem]': !cardWide,
-                'xl:max-h-[45rem] md:max-h-[32rem]': currentStep === 8,
+                '2xl:max-h-[45rem] md:max-h-[36rem]': currentStep === 8,
               })}
             />
           </>

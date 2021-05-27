@@ -13,14 +13,14 @@ export const trainings: Training[] = [
     description:
       'No curso, você vai conhecer os principais produtos que podem ser usados na impermeabilização, blindando ambientes contra qualquer tipo de umidade.',
     photoUri:
-      'https://d20aasqov94ke3.cloudfront.net/gallery/images/2ad9c5a1a650b11dd0ae461ef8da4d1463978236.png?Expires=1679859285&Signature=ogvOvhD8qp59jKQ5fuHlcRwSWwveNENTIYuaHUDUzQ-1ABblEceTy1x~Ppnn01Z-h57XzzS6zQkrZdmYymk6Im9B5ikWpAn7Og3Pj0KEREJdcOcDgKb~8k7AdaixDqV5H8ICDEaowo8cITXlxFlp0ECLUcACD2myQ5ga0XXKb0M-RZeeRfhn1Ei9VRgCCm1N-i~rJVKiQlz-Ojr01Vh7OXLeFXJbD-BxUK9ktnHQ-lHo8xteHc0AJ5MXiI56xZLWrdHbg4AEr~9xfA8-GLZeqDhwOOrgoO9S6K0KpeFxiESYb9nmHeP1XhZWOJ6BrzRtcMDLvRs3YMMgo7ikXVGJPw__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
+      'https://d20aasqov94ke3.cloudfront.net/gallery/images/f09fb0dd6493e6619f0ce5a02e6dd9bc29de3af5.png?Expires=1682875303&Signature=GPg2fnlwvAV6rBvVKXnq9s4O25fDxwur7koWQRUVN8achNNw-mdNgMTfbumhyS8YLwp2MB7oSm0FXS6ya9rpIn3mPaWV4DO3TP8PCBv-sCJow4je2Lan1WnUPwHmKbKtSkqqb-fdD8jc5MYy4KArNSvEqx99MhPxl55L9Ethw1Oef6q1YuQDhkLBh~mQUoNjGwtVfZSHjRadhUVWbUODovZJGjVJdEnZhajyFo2pOfjbwmVPplkryx0iPW3kzgcAb1W-hMAuCDf8mB-N12D9E5KJyogSD5pmRQ16PtJiL-dc~Taf29HNgXiXapoEnhU9TBb5YzHAkp13cqE4p6zDFQ__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
   },
   {
     name: 'Curso - Coberturas Brasilit',
     description:
       'No curso, você vai conhecer as linhas de telhas da Brasilit, como Essencial, Performance, Domínio e Estilo; além de complementos para coberturas e subcoberturas, e receberá dicas de ouro para a montagem.',
     photoUri:
-      'https://d20aasqov94ke3.cloudfront.net/gallery/images/c211a531fa96a4d122ca0a2c4cc77e18098057ab.png?Expires=1679859285&Signature=dnxCPminbqBb8OQ3Fj5uDbx2X5y1PBI9MU0XB9ZDuXmGuBPx9D-6rvSYxcXqoAglRGKOKHvKGQ4Qs-7Y6ruQwdey6h4wldSeCvkFXqfes1IHiAuUhwhQiWxnGWouisefq8uMYrYVHgkzj22ugSx3bWtS5-wgblNVDYyNy-rITPmXMawx~uMtIzxgaPG5US-wfeFm~x8jh5erfFcJDWh1r4REOQKw2x00L65EErQYDgsqs3h8C9MoohyB7VkR687~7GXS7HVs06eWdWcfrmb3fpvzPtrKWRN2Q5UrmeYxH7id2Mt8M6S9ByKmlvt4s7egvJpHgU2pX-e5AywbW5Y0Pw__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
+      'https://d20aasqov94ke3.cloudfront.net/gallery/images/4ff3bc3a7143a7ad99b6250c715cd6d60728c634.png?Expires=1682875303&Signature=CMUzbqNC9g5UKFDB6i-YbPopVh7VSIEFkIYrKCNlXY9P3OdfEHt2bLYfkrzUZPt7ko5LEkjykTcUxSUDrmyrxaC7eptTJPCWPkYmyWW0eMZU7BtprTuBlR3abs0-7MjTKY1vwa0A6GeKv5~F0ltAVH~k0ARYWcdKQDxOIN2-5CvmBUVojjxsGZzhHMD3a1-EAwe8Zz6NBQmCtFLeYnnCzfUTgYOmijb-yVkTGwSE~kIQ7XFqY0zW~YtTidf1JErxjC3hBro14-KXu~Npa4JLYd~Wj9tWD-0LBB6jH-2pkYjcGLMyJVkKjsyxo55qDeFTbREpklaNJC3B~aK-Ky~5ug__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
   },
   {
     name: 'Curso - Especialistas em Drywall',
@@ -37,14 +37,14 @@ export const trainings: Training[] = [
       'https://d20aasqov94ke3.cloudfront.net/gallery/images/076a4095ef2c3a0a4c14a5aed6059f34b6a4d84d.png?Expires=1679859285&Signature=BnmMcUp41ET0Zb~VgEJxY7yI8MZjDDkGewMRpsfZ5S2ZZOF4bVhAR14wBenNNXmudlu4DUlqam3eFfIRy4QvTSYtJCW0D0tEXKiDzOmqQvzr5mFsMXxWjytJIq6kIszyaAq2Wqmm2Xn2-OembrUtEzCuYLtL786ZUA9HVu7IcIynnOjeEb5NWZSd155lxglJNU3BIEMCZltAK-FYBebap1I1fU5kqZdNpdLxQxtZORhGgs4DahvyoOVKZM6IVq5f4fORLDd2QsZNIpQdRT4iskg6uvbyZXGw1Wn9CzdKJI3X6dgTTMraf3eFdmC6XXHcIVjxn5ip38WZZJngKmgusg__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
   },
   {
-    name: 'Curso - Tudo sobre o portfólio Acústica & Design Saint-Gobain',
+    name: 'Curso - Tudo sobre Acústica & Design Saint-Gobain',
     description:
       'Conheça os fundamentos do conceito de acústica, incluindo as vantagens da solução. Entenda porque os produtos de design fazem toda a diferen�a no acabamento de uma obra.',
     photoUri:
       'https://d20aasqov94ke3.cloudfront.net/gallery/images/519acfa3cb5432daed8e08a11d40b62b7bdbf673.png?Expires=1679859285&Signature=hNIc~QcorExfEk2cDtfFBBxpgCnqE2hGz89Gw8q6aCeK3YH9RQ3e7O3Lfc5w3X9P9hyrujf8UzapNaF00D6xH-2XwXaQkNjxbSBVv52-ZuzsGG9xZY9iwpMglSwueAXsylnjhP9RnI1HPJAty3IfUgeVQ1Y-XY9dD9DKRbCxzvMdbZZcZdciVH0lNeWG3cl7ACHoyAm8SHGYaBV7xcjxPj-nFccpyV64Md~eq~H9sE6Z1Z6k1bFczINKOpUgDLlPiyqkIvKq3q4L0OEDeGH6uBNmtZKNo-ITM0gPuPrrU6EukdiLPE1luZvKBwnm2Fs3OsB8EdSkfldYQ-KjkrsEZg__&Key-Pair-Id=APKAJ22WF26BLHIHK4LQ',
   },
   {
-    name: 'Curso - Oficina de mosaicos Quartzolit: tabuleiro de jogos',
+    name: 'Curso - Mosaicos Quartzolit: tabuleiro de jogos',
     description:
       'Entenda como um projeto personalizado pode ter um significado especial. Siga a proposta Fa�a Você Mesmo e aprenda a criar um tabuleiro de jogos com pastilhas e rejunte.',
     photoUri:
